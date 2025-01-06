@@ -1,10 +1,8 @@
-//大部分情況下，我們都不需要用到 useCallback
-//使用 useCallback 後，只要它的 dependencies[]沒有改變，
-//就可以指到同一個函式，把函式放到 useEffect 的 dependencies[] 後，就不會重新呼叫 useEffect 內的功能(因為沒有改變)
-
-// 當你在 React 中需要傳遞函數作為 prop 時，你可以使用 
-//useCallback 來優化性能。當你不使用 useCallback 時，
-//每次當父元件重新渲染時，該函數都會被重新創建。這可能會導致子元件重新渲染，即使它們的 prop 沒有實際改變。 
+//大部分情況不需要用到 useCallback
+//useCallback只要dependencies[]沒有改變，
+//就可以指到同一個函式，函式放到 useEffect 的 dependencies[] 後，就不會重新呼叫 useEffect 內的功能(因為沒有改變)
+// React 中傳遞函數作為 prop 時，可以使用 useCallback 來優化性能。
+//每次當父元件重新渲染時，該函數都會被重新創建。導致子元件重新渲染，即使prop 沒有改變。 
 
 import React, { useState, useCallback,memo } from 'react';
 //const name = 'John';
